@@ -1,0 +1,63 @@
+CREATE TABLE USUARIOHOTEL (
+    id NUMERIC NOT NULL,
+    nome VARCHAR(30) NOT NULL,
+    cpf VARCHAR(12) UNIQUE NOT NULL,
+    endereco VARCHAR (60),
+    telefone VARCHAR(20),
+    funcionario BOOLEAN NOT NULL,
+    login VARCHAR(30),
+    senha VARCHAR(30),
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE TIPOSTATUS (
+    codigo NUMERIC NOT NULL,
+    nomestatus VARCHAR (30),
+    PRIMARY KEY (codigo)
+);
+
+CREATE TABLE QUARTO (
+    codigo NUMERIC NOT NULL,
+    fk_status NUMERIC,
+    valordiaria double,
+    numcamasolteiro NUMERIC,
+    numcamacasal NUMERIC,
+    banheira boolean,
+    frigobar boolean,
+    televisao boolean,
+    homeoffice boolean,
+    internet boolean,
+    tipoquarto NUMERIC,
+    PRIMARY KEY (codigo),
+    CONSTRAINT FK_STATUS FOREIGN KEY (fk_status) REFERENCES TIPOSTATUS (codigo)
+);
+
+
+CREATE TABLE RESERVA (
+    codigo NUMERIC NOT NULL,
+    fk_codquarto NUMERIC NOT NULL,
+    fk_codusuario NUMERIC NOT NULL,
+    valor DOUBLE,
+    checkout boolean,
+    diarias NUMERIC,
+    PRIMARY KEY (codigo,fk_codquarto,fk_codusuario),
+    CONSTRAINT FK_QUARTO FOREIGN KEY (fk_codquarto) REFERENCES QUARTO (codigo),
+    CONSTRAINT FK_USUARIO FOREIGN KEY (fk_codusuario) REFERENCES USUARIOHOTEL (id)
+);
+
+CREATE TABLE SERVICOHOTEL (
+    codigo NUMERIC NOT NULL,
+    nome VARCHAR(50),
+    preco DOUBLE,
+    PRIMARY KEY (codigo)
+);
+
+CREATE TABLE RESERVA_SERVICO (
+    fk_codigoreserva NUMERIC NOT NULL,
+    fk_codquarto NUMERIC NOT NULL,
+    fk_codusuario NUMERIC NOT NULL,
+    fk_codigoservico NUMERIC NOT NULL,
+    PRIMARY KEY (fk_codigoreserva,fk_codquarto,fk_codusuario,fk_codigoservico),
+    CONSTRAINT FK_RESERVA FOREIGN KEY (fk_codigoreserva,fk_codquarto,fk_codusuario) REFERENCES RESERVA (codigo,fk_codquarto,fk_codusuario),
+    CONSTRAINT FK_SERVICO FOREIGN KEY (fk_codigoservico) REFERENCES SERVICOHOTEL (codigo)
+);
