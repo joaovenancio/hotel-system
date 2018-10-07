@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        
+        <h:form>
+            <h1>Novo cliente</h1>
+            <p>Nome</p>
+            <p><p:inputText title="Nome:" value="#{clienteMBean.cliente.nome}" /></p>
+            <p>Endereço</p>
+            <p><p:inputText label="endereco" value="#{clienteMBean.cliente.endereco}" /></p>
+            <p>Cidade</p>
+            <p><p:inputText label="cidade" value="#{clienteMBean.cliente.cidade}" /></p>
+            <p>Estado</p>
+            <p><p:selectOneMenu label="uf" value="#{clienteMBean.cliente.uf}" >
+                <f:selectItem itemLabel="Paraná" itemValue="PR" />
+                <f:selectItem itemLabel="Santa Catarina" itemValue="SC" />
+                <f:selectItem itemLabel="Rio Grande do Sul" itemValue="RS" />
+                </p:selectOneMenu></p>
+            <p>Telefone</p>
+            <p><p:inputText label="Telefone:" value="#{clienteMBean.cliente.telefone}" /></p>
+            <p>E-mail</p>
+            <p><p:inputText label="E-mail:" value="#{clienteMBean.cliente.email}" /></p>
+            <p><p:commandButton value="Cadastrar" id="cadastrar" action="#{clienteMBean.cadastrarCliente()}" styleClass="ui-priority-primary" /></p>
+        </h:form> 
+        
+    </h:head>
+    <h:body>
+        Hello from Facelets
+    </h:body>
+</html>
+

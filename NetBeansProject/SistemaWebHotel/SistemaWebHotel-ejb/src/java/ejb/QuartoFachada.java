@@ -26,7 +26,7 @@ public class QuartoFachada {
         em.persist(object);
     }
 
-       public int getMaxCodigo() {  // pega o maior ID de cliente na tabela
+    public int getMaxCodigo() {  // pega o maior ID de cliente na tabela
        Query query = em.createNativeQuery("SELECT MAX(codigo) FROM QUARTO");
        return (Integer) query.getSingleResult();
     }

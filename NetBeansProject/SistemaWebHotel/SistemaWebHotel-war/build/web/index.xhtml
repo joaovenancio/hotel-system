@@ -11,24 +11,34 @@
         Hello from Facelets
         
         <h:form>
-            <h1>Novo cliente</h1>
-            <p>Nome</p>
-            <p><p:inputText title="Nome:" value="#{clienteMBean.cliente.nome}" /></p>
-            <p>Endereço</p>
-            <p><p:inputText label="endereco" value="#{clienteMBean.cliente.endereco}" /></p>
-            <p>Cidade</p>
-            <p><p:inputText label="cidade" value="#{clienteMBean.cliente.cidade}" /></p>
-            <p>Estado</p>
-            <p><p:selectOneMenu label="uf" value="#{clienteMBean.cliente.uf}" >
-                <f:selectItem itemLabel="Paraná" itemValue="PR" />
-                <f:selectItem itemLabel="Santa Catarina" itemValue="SC" />
-                <f:selectItem itemLabel="Rio Grande do Sul" itemValue="RS" />
+            <h1>Registrar Quarto</h1>
+            <p>Codigo</p>
+            <p><p:inputText title="codigo" value="#{quartoManagementBean.quarto.codigo}" /></p>
+            <p><p:selectOneMenu label="status" value="#{quartoManagementBean.quarto.fkStatus}" >
+                <f:selectItem itemLabel="Livre" itemValue="0" />
+                <f:selectItem itemLabel="Reservado" itemValue="1" />
+                <f:selectItem itemLabel="Ocupado" itemValue="2" />
                 </p:selectOneMenu></p>
-            <p>Telefone</p>
-            <p><p:inputText label="Telefone:" value="#{clienteMBean.cliente.telefone}" /></p>
-            <p>E-mail</p>
-            <p><p:inputText label="E-mail:" value="#{clienteMBean.cliente.email}" /></p>
-            <p><p:commandButton value="Cadastrar" id="cadastrar" action="#{clienteMBean.cadastrarCliente()}" styleClass="ui-priority-primary" /></p>
+            <p>Valor das Diarias</p>
+            <p><p:inputText title="valorDiaria" value="#{quartoManagementBean.quarto.valordiaria}" /></p>
+            <p>Numero de Camas de Solteiro</p>
+            <p><p:inputText title="numCamaSolteiro" value="#{quartoManagementBean.quarto.numcamasolteiro}" /></p>
+            <p>Numero de Camas de Casal</p>
+            <p><p:inputText label="numCamaCasal" value="#{quartoManagementBean.quarto.numcamacasal}" /></p>
+            <p>Banheira</p>
+            <p><p:selectBooleanCheckbox value="#{quartoManagementBean.quarto.banheira}" /></p>
+            <p>Frigobar</p>
+            <p><p:selectBooleanCheckbox value="#{quartoManagementBean.quarto.frigobar}" /></p>
+            <p>Televisão</p>
+            <p><p:selectBooleanCheckbox value="#{quartoManagementBean.quarto.televisao}" /></p>
+            <p>Home Office</p>
+            <p><p:selectBooleanCheckbox value="#{quartoManagementBean.quarto.homeoffice}" /></p>
+            <p>Internet</p>
+            <p><p:selectBooleanCheckbox value="#{quartoManagementBean.quarto.internet}" /></p>
+            <p>TipoQuarto</p>
+            <p><p:inputText label="tipoQuarto" value="#{quartoManagementBean.quarto.tipoquarto}" /></p>
+            
+            <p><p:commandButton value="Cadastrar" id="cadastrar" action="#{quartoManagementBean.cadastrarQuarto()}" styleClass="ui-priority-primary" /></p>
         </h:form> 
         
     </h:body>

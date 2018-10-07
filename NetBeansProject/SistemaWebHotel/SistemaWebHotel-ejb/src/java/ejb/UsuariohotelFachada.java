@@ -9,6 +9,7 @@ import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -24,6 +25,17 @@ public class UsuariohotelFachada {
     public void persist(Object object) {
         em.persist(object);
     }
+    
+    public int getMaxCodigo() {  // pega o maior ID de cliente na tabela
+       Query query = em.createNativeQuery("SELECT MAX(id) FROM USUARIOHOTEL");
+       return (Integer) query.getSingleResult();
+    }
+    
+    void cadastrarUsuario(Usuariohotel usuario) {
+        usuario.setId(this.getMaxCodigo());
+        this.em.persist(usuario);
+    }
+    
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
