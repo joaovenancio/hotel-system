@@ -258,6 +258,10 @@ exists or setup the property manually. For example like this:
         <copyfiles files="${libs.javaee-web-api-6.0.classpath}" todir="${build.dir}//"/>
         <copyfiles files="${libs.javaee-api-6.0.classpath}" todir="${build.dir}//"/>
         <copyfiles files="${libs.javaee-api-7.0.classpath}" todir="${build.dir}//"/>
+        <copyfiles files="${libs.hibernate4-support.classpath}" todir="${build.dir}//"/>
+        <copyfiles files="${libs.hibernate4-persistencemodelgen.classpath}" todir="${build.dir}//"/>
+        <copyfiles files="${libs.Comet-GlassFish-v3.classpath}" todir="${build.dir}//"/>
+        <copyfiles files="${libs.hibernate4-persistence.classpath}" todir="${build.dir}//"/>
     </target>
     <target name="post-compile">
         <!-- Empty placeholder for easier customization. -->

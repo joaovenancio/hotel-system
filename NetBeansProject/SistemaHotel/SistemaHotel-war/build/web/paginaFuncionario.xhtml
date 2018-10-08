@@ -8,9 +8,13 @@
     </h:head>
     <h:body>
         
-        <p><p:commandButton value="Cadastrar Cliente" id="cadastrarC" action="cadastrarCliente" styleClass="ui-priority-primary" /></p>
-        <p><p:commandButton value="Cadastrar Servico" id="cadastrarS" action="cadastrarServico" styleClass="ui-priority-primary" /></p>
-        <p><p:commandButton value="Listagem de Clientes" id="botaoListar" action="#{usuariohotelMBean.botaoListar()}" styleClass="ui-priority-primary" /></p>
+        <h:form>
+            
+            <p><p:commandButton value="Cadastrar Cliente" id="cadastrarC" action="cadastrarCliente" styleClass="ui-priority-primary" /></p>
+            <p><p:commandButton value="Cadastrar Servico" id="cadastrarS" action="cadastrarServico" styleClass="ui-priority-primary" /></p>
+            <p><p:commandButton value="Listagem de Clientes" id="botaoListar" action="#{usuariohotelMBean.botaoListar()}" styleClass="ui-priority-primary" ajax="false" /></p>
+            
+        </h:form>
         
     </h:body>
 </html>

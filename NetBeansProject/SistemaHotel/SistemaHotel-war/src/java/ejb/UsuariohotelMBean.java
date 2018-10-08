@@ -91,6 +91,7 @@ public class UsuariohotelMBean {
     }
 
     public String cadastrarUsuariohotel() {          // Chama o método do bean de sessão
+        usuariohotel.setFuncionario(false);
         usuariohotelFachada.cadastrarUsuariohotel(usuariohotel);
         usuariohotel = new Usuariohotel();
         return "index";

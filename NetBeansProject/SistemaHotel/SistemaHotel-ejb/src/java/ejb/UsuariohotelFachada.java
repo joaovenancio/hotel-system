@@ -5,6 +5,7 @@
  */
 package ejb;
 
+import java.math.BigDecimal;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
@@ -35,11 +36,14 @@ public class UsuariohotelFachada {
 
     public int getMaxId() {  // pega o maior ID de cliente na tabela
         Query query = em.createNativeQuery("SELECT MAX(id) FROM USUARIOHOTEL");
-        return (Integer) query.getSingleResult();
+        BigDecimal resultado = (BigDecimal) query.getSingleResult();
+        return resultado.intValue();
     }
  
     public void cadastrarUsuariohotel(Usuariohotel usuariohotel) {  // Cadastra o cliente 
-       usuariohotel.setId(getMaxId()+1);
+        int id = getMaxId()+1;
+       usuariohotel.setId(id);
+        System.out.println(id);
        em.persist(usuariohotel);
     }
     
