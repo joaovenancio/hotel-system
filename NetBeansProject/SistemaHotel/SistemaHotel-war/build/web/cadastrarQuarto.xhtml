@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cadastrar Quarto</title>
+    </h:head>
+    <h:body>
+        
+        <h1>Novo Quarto</h1>
+            
+            <p>Numero de Camas de Casal</p>
+            <p><p:inputText title="nome" value="#{quartoMBean.quarto.numcamacasal}" /></p>
+            <p>Numero de Camas de Solteiro</p>
+            <p><p:inputText title="nome" value="#{quartoMBean.quarto.numcamasolteiro}" /></p>
+            <p>Tipo do Quarto</p>
+            <p><p:inputText title="nome" value="#{quartoMBean.quarto.tipoquarto}" /></p>
+            <p>Valor da Diaria</p>
+            <p><p:inputText title="nome" value="#{quartoMBean.quarto.valordiaria}" /></p>
+            <p>Status</p>
+            <p><p:selectOneMenu label="status" value="#{quartoMBean.quarto.fkStatus}" >
+                <f:selectItem itemLabel="Livre" itemValue="0" />
+                <f:selectItem itemLabel="Ocupado" itemValue="1" />
+                <f:selectItem itemLabel="Reservado" itemValue="2" />
+                </p:selectOneMenu></p>
+            <p>Tem banheira</p>
+            <<p:selectBooleanCheckbox value="#{quartoMBean.quarto.banheira}" />
+            <p>Tem Frigobar</p>
+            <<p:selectBooleanCheckbox value="#{quartoMBean.quarto.frigobar}" />
+            <p>Tem banheira</p>
+            <<p:selectBooleanCheckbox value="#{quartoMBean.quarto.banheira}" />
+            
+            <p><p:commandButton value="Cadastrar" id="cadastrarUsuariohotel" action="#{usuariohotelMBean.cadastrarUsuariohotel()}" styleClass="ui-priority-primary" /></p>
+            
+    </h:body>
+</html>
+
