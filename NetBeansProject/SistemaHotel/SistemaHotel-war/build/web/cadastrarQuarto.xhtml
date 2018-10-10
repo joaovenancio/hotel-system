@@ -25,22 +25,41 @@
             <p><p:inputText title="valordiaria" value="#{quartoMBean.quarto.valordiaria}" /></p>
             
             <p>Status</p>
-            <p><p:inputText title="status" value="#{quartoMBean.codigoStatus}" /></p>
+            <p><p:selectOneMenu label="status" value="#{quartoMBean.codigoStatus}" >
+                <f:selectItem itemLabel="Livre" itemValue="0" />
+                <f:selectItem itemLabel="Ocupado" itemValue="1" />
+                <f:selectItem itemLabel="Reservado" itemValue="2" />
+            </p:selectOneMenu></p>
             
             <p>Tem Banheira</p>
-            <p><p:inputText title="banheira" value="#{quartoMBean.quarto.banheira}" /></p>
+            <p:selectOneRadio id="banheira" value="#{quartoMBean.quarto.banheira}">
+                <f:selectItem itemLabel="Sim" itemValue="1" />
+                <f:selectItem itemLabel="Não" itemValue="0" />
+            </p:selectOneRadio>
             
             <p>Tem Frigobar</p>
-            <p><p:inputText title="frigobar" value="#{quartoMBean.quarto.frigobar}" /></p>
+            <p:selectOneRadio id="frigobar" value="#{quartoMBean.quarto.frigobar}">
+                <f:selectItem itemLabel="Sim" itemValue="1" />
+                <f:selectItem itemLabel="Não" itemValue="0" />
+            </p:selectOneRadio>
             
             <p>Tem Televisao</p>
-            <p><p:inputText title="televisao" value="#{quartoMBean.quarto.televisao}" /></p>
+            <p:selectOneRadio id="televisao" value="#{quartoMBean.quarto.televisao}">
+                <f:selectItem itemLabel="Sim" itemValue="1" />
+                <f:selectItem itemLabel="Não" itemValue="0" />
+            </p:selectOneRadio>
             
             <p>Tem Homeoffice</p>
-            <p><p:inputText title="homeoffice" value="#{quartoMBean.quarto.homeoffice}" /></p>
+            <p:selectOneRadio id="homeoffice" value="#{quartoMBean.quarto.homeoffice}">
+                <f:selectItem itemLabel="Sim" itemValue="1" />
+                <f:selectItem itemLabel="Não" itemValue="0" />
+            </p:selectOneRadio>
             
             <p>Tem Internet</p>
-            <p><p:inputText title="internet" value="#{quartoMBean.quarto.internet}" /></p>
+            <p:selectOneRadio id="internet" value="#{quartoMBean.quarto.internet}">
+                <f:selectItem itemLabel="Sim" itemValue="1" />
+                <f:selectItem itemLabel="Não" itemValue="0" />
+            </p:selectOneRadio>
             
             <p><p:commandButton value="CadastrarQuarto" id="cadastrarQuarto" action="#{quartoMBean.cadastrarQuarto()}" styleClass="ui-priority-primary" /></p>
             

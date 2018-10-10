@@ -106,4 +106,6 @@ public class UsuariohotelMBean {
         return "listagem";
     }
     
+    
+    
 }
