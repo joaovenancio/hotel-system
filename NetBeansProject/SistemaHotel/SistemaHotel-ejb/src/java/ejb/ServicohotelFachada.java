@@ -33,7 +33,7 @@ public class ServicohotelFachada {
     }
 
     public int getMaxCodigo() {  // pega o maior ID de cliente na tabela
-        Query query = em.createNativeQuery("SELECT MAX(id) FROM SERVICOHOTEL");
+        Query query = em.createNativeQuery("SELECT MAX(codigo) FROM SERVICOHOTEL");
         return (Integer) query.getSingleResult();
     }
  
