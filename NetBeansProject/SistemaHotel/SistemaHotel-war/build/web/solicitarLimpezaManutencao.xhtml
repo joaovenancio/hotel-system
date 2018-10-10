@@ -14,13 +14,13 @@
         <h:form>
             
             <p>Solicitar Limpeza?</p>
-            <p:selectOneRadio id="internet" required="true" value="#{reservaMBean.limpeza}">
+            <p:selectOneRadio id="limpeza" value="#{reservaMBean.limpeza}">
                 <f:selectItem itemLabel="Sim" itemValue="1" />
                 <f:selectItem itemLabel="Não" itemValue="0" />
             </p:selectOneRadio>
 
             <p>Solicitar Manutenção?</p>
-            <p:selectOneRadio id="internet" required="true" value="#{reservaMBean.manutencao}">
+            <p:selectOneRadio id="manutencao" value="#{reservaMBean.manutencao}">
                 <f:selectItem itemLabel="Sim" itemValue="1" />
                 <f:selectItem itemLabel="Não" itemValue="0" />
             </p:selectOneRadio>

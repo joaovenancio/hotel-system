@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Consultar Fatura</title>
+    </h:head>
+    <h:body>
+        
+        <h1>Consultar Fatura</h1>
+        
+        <p>Valor Total da Fatura:</p>
+        <h:outputText value="#{reservaMBean.reserva.valor}" />
+        
+        <h:form>
+            <p><p:commandButton value="Voltar" id="voltar" action="paginaCliente" styleClass="ui-priority-primary" /></p>
+        </h:form>
+        
+    </h:body>
+</html>
+

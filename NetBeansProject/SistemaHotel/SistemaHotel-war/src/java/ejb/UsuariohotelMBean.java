@@ -9,6 +9,7 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.ManagedProperty;
 
 /**
  *
@@ -24,7 +25,18 @@ public class UsuariohotelMBean {
     private String filtroCpf = "";
     private String login = "";
     private String senha = "";
+    
+    @ManagedProperty(value="#{bean1}") 
+    ReservaMBean reservaMBean;
 
+    public ReservaMBean getReservaMBean() {
+        return reservaMBean;
+    }
+
+    public void setReservaMBean(ReservaMBean reservaMBean) {
+        this.reservaMBean = reservaMBean;
+    }
+    
     /**
      * Creates a new instance of UsuariohotelMBean
      */
@@ -54,8 +66,23 @@ public class UsuariohotelMBean {
                 if (user.getSenha().equals(senha)) {
                     if (user.getFuncionario()) {
                         return "paginaFuncionario";
-                    } else {
+                    } else {//Caso for um cliente, configurar o bean JSF de Reserva para carregar o quarto desse cliente
+                        
+                        try { //Caso nao tiver nenhum dado no BD, usar essa clasula para nao dar null pointer
+                            
+                            List<Reserva> listaReserva = this.reservaMBean.getListaQuarto(); //Problema pode vir dessa getListaQuarto()
+                            for (Reserva reserva : listaReserva) {
+                                if (reserva.getUsuariohotel().equals(user)) {
+                                    this.reservaMBean.setReserva(reserva);
+                                }
+                            }
+                            
+                        } catch (NullPointerException ex) {
+                            return "paginaCliente";
+                        }
+                        
                         return "paginaCliente";
+                        
                     }
                 }
                 return "index";
