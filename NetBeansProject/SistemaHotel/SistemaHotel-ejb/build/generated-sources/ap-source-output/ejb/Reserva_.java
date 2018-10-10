@@ -9,7 +9,7 @@ import javax.persistence.metamodel.CollectionAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-10-10T11:48:26")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-10-10T14:23:58")
 @StaticMetamodel(Reserva.class)
 public class Reserva_ { 
 

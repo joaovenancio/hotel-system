@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Listar Quartos</title>
+    </h:head>
+    <h:body>
+        
+        <f:view>
+            <h:form>
+                
+                <h1><h:outputText value="Lista de Quartos do Hotel"/></h1>
+                
+                <p:dataTable var="quarto" value="#{quartoMBean.listaQuarto}">
+                   <p:column headerText="Codigo">
+                       <h:outputText value="#{quarto.codigo}" />
+                   </p:column>
+                   <p:column headerText="Status">
+                       <h:outputText value="#{quarto.fkStatus.nomestatus}" /> 
+                   </p:column>
+                   <p:column headerText="Valor da Diária">
+                       <h:outputText value="#{quarto.valordiaria}" />
+                   </p:column>
+                    
+                </p:dataTable>
+            </h:form>
+        </f:view>
+        
+        <h:form>
+            <p><p:commandButton value="Voltar" id="voltar" action="paginaFuncionario" styleClass="ui-priority-primary" /></p>
+        </h:form>
+        
+    </h:body>
+</html>
+

@@ -5,6 +5,7 @@
  */
 package ejb;
 
+import java.util.List;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
@@ -39,6 +40,10 @@ public class QuartoMBean {
         quartoFachada.cadastrarQuarto(quarto);
         quarto = new Quarto();
         return "paginaFuncionario";
+    }
+    
+    public List<Quarto> getListaQuarto() {
+        return this.quartoFachada.getListaQuarto();
     }
     
 }

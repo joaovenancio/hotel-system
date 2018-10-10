@@ -27,7 +27,7 @@ CREATE TABLE QUARTO (
     televisao SMALLINT,
     homeoffice SMALLINT,
     internet SMALLINT,
-    tipoquarto NUMERIC,
+    tipoquarto VARCHAR(30),
     PRIMARY KEY (codigo),
     CONSTRAINT FK_STATUS FOREIGN KEY (fk_status) REFERENCES TIPOSTATUS (codigo)
 );

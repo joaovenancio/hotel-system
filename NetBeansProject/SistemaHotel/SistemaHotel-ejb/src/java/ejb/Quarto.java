@@ -19,6 +19,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -66,8 +67,10 @@ public class Quarto implements Serializable {
     private Boolean homeoffice;
     @Column(name = "INTERNET")
     private Boolean internet;
+    @Size(max = 30)
     @Column(name = "TIPOQUARTO")
-    private Integer tipoquarto;
+    private String tipoquarto;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @JoinColumn(name = "FK_STATUS", referencedColumnName = "CODIGO")
     @ManyToOne
     private Tipostatus fkStatus;
@@ -153,11 +156,11 @@ public class Quarto implements Serializable {
         this.internet = internet;
     }
 
-    public Integer getTipoquarto() {
+    public String getTipoquarto() {
         return tipoquarto;
     }
 
-    public void setTipoquarto(Integer tipoquarto) {
+    public void setTipoquarto(String tipoquarto) {
         this.tipoquarto = tipoquarto;
     }
 

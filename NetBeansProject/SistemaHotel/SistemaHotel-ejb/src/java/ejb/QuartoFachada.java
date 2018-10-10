@@ -5,6 +5,7 @@
  */
 package ejb;
 
+import java.math.BigDecimal;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
@@ -27,19 +28,21 @@ public class QuartoFachada {
         em.persist(object);
     }
     
-    public List<ejb.Usuariohotel> getListaQuarto() {
+    public List<ejb.Quarto> getListaQuarto() {
         Query query = em.createNamedQuery("Quarto.findAll");
         return query.getResultList();
     }
 
     public int getMaxCodigo() {  // pega o maior ID de cliente na tabela
         Query query = em.createNativeQuery("SELECT MAX(codigo) FROM QUARTO");
-        return (Integer) query.getSingleResult();
+        BigDecimal resultado = (BigDecimal) query.getSingleResult();
+        return resultado.intValue();
     }
  
     public void cadastrarQuarto(Quarto quarto) {  // Cadastra o cliente 
-       quarto.setCodigo(getMaxCodigo()+1);
-       em.persist(quarto);
+        int codigo = getMaxCodigo()+1;
+        quarto.setCodigo(codigo);
+        em.persist(quarto);
     }
     
     public void salvarQuarto(Quarto quarto) {

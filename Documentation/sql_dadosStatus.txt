@@ -1,0 +1,3 @@
+INSERT INTO tipostatus VALUES (0,'Livre');
+INSERT INTO tipostatus VALUES (1,'Ocupado');
+INSERT INTO tipostatus VALUES (2,'Reservado');
