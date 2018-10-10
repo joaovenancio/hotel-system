@@ -25,38 +25,38 @@
             <p><p:inputText title="valordiaria" value="#{quartoMBean.quarto.valordiaria}" /></p>
             
             <p>Status</p>
-            <p><p:selectOneMenu label="status" value="#{quartoMBean.codigoStatus}" >
+            <p><p:selectOneMenu label="status" required="true" value="#{quartoMBean.codigoStatus}" >
                 <f:selectItem itemLabel="Livre" itemValue="0" />
                 <f:selectItem itemLabel="Ocupado" itemValue="1" />
                 <f:selectItem itemLabel="Reservado" itemValue="2" />
             </p:selectOneMenu></p>
             
             <p>Tem Banheira</p>
-            <p:selectOneRadio id="banheira" value="#{quartoMBean.quarto.banheira}">
+            <p:selectOneRadio id="banheira" required="true" value="#{quartoMBean.quarto.banheira}">
                 <f:selectItem itemLabel="Sim" itemValue="1" />
                 <f:selectItem itemLabel="Não" itemValue="0" />
             </p:selectOneRadio>
             
             <p>Tem Frigobar</p>
-            <p:selectOneRadio id="frigobar" value="#{quartoMBean.quarto.frigobar}">
+            <p:selectOneRadio id="frigobar" required="true" value="#{quartoMBean.quarto.frigobar}">
                 <f:selectItem itemLabel="Sim" itemValue="1" />
                 <f:selectItem itemLabel="Não" itemValue="0" />
             </p:selectOneRadio>
             
             <p>Tem Televisao</p>
-            <p:selectOneRadio id="televisao" value="#{quartoMBean.quarto.televisao}">
+            <p:selectOneRadio id="televisao" required="true" value="#{quartoMBean.quarto.televisao}">
                 <f:selectItem itemLabel="Sim" itemValue="1" />
                 <f:selectItem itemLabel="Não" itemValue="0" />
             </p:selectOneRadio>
             
             <p>Tem Homeoffice</p>
-            <p:selectOneRadio id="homeoffice" value="#{quartoMBean.quarto.homeoffice}">
+            <p:selectOneRadio id="homeoffice" required="true" value="#{quartoMBean.quarto.homeoffice}">
                 <f:selectItem itemLabel="Sim" itemValue="1" />
                 <f:selectItem itemLabel="Não" itemValue="0" />
             </p:selectOneRadio>
             
             <p>Tem Internet</p>
-            <p:selectOneRadio id="internet" value="#{quartoMBean.quarto.internet}">
+            <p:selectOneRadio id="internet" required="true" value="#{quartoMBean.quarto.internet}">
                 <f:selectItem itemLabel="Sim" itemValue="1" />
                 <f:selectItem itemLabel="Não" itemValue="0" />
             </p:selectOneRadio>
