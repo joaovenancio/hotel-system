@@ -1,0 +1,24 @@
+<p:outputLabel for="@next" value="Tem Banheira: " />
+            <p:selectBooleanCheckbox value="#{quartoMBean.quarto.banheira}" />
+            <p>Tem Frigobar</p>
+            <p:outputLabel for="@next" value="Tem Frigobar: " />
+            <p:selectBooleanCheckbox value="#{quartoMBean.quarto.frigobar}" />
+            <p>Tem Televisao</p>
+            <p:outputLabel for="@next" value="Tem Televisao: " />
+            <p:selectBooleanCheckbox value="#{quartoMBean.quarto.televisao}" />
+            <p>Tem Homeoffice</p>
+            <p:outputLabel for="@next" value="Tem Homeoffice: " />
+            <p:selectBooleanCheckbox value="#{quartoMBean.quarto.homeoffice}" />
+            <p>Tem Internet</p>
+            <p:outputLabel for="@next" value="Tem Internet: " />
+            <p:selectBooleanCheckbox value="#{quartoMBean.quarto.internet}" />
+
+
+INSERT INTO USUARIOHOTEL VALUES (0,'30','30','30','30',1,'30','30')
+INSERT INTO SERVICOHOTEL VALUES (0,'Eneas',10);
+INSERT INTO QUARTO VALUES (0,0,30,3,3,0,0,0,0,0,'Americano');
+INSERT INTO TIPOSTATUS (0,'Livre');
+INSERT INTO TIPOSTATUS (1,'Ocupado');
+INSERT INTO TIPOSTATUS (2,'Reservado');
+SELECT * FROM APP.QUARTO FETCH FIRST 100 ROWS ONLY;
+

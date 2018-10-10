@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Login</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                
+                <p>Login</p>
+                <p><p:inputText title="login" value="#{usuariohotelMBean.login}" /></p>
+                <p>Senha</p>
+                <p><p:inputText label="senha" value="#{usuariohotelMBean.senha}" /></p>
+                
+                <p><p:commandButton value="Login" id="login" action="#{usuariohotelMBean.realizarLogin()}" styleClass="ui-priority-primary" /></p>
+                
+            </h:form>
+        </f:view>
+        
+    </h:body>
+</html>
+

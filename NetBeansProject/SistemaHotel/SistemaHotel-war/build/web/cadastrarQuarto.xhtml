@@ -23,29 +23,26 @@
             <p><p:inputText title="tipoquarto" value="#{quartoMBean.quarto.tipoquarto}" /></p>
             <p>Valor da Diaria</p>
             <p><p:inputText title="valordiaria" value="#{quartoMBean.quarto.valordiaria}" /></p>
-            <p>Status</p>
-            <p><p:selectOneMenu label="status" value="#{quartoMBean.quarto.fkStatus}" >
-                <f:selectItem itemLabel="Livre" itemValue="0" />
-                <f:selectItem itemLabel="Ocupado" itemValue="1" />
-                <f:selectItem itemLabel="Reservado" itemValue="2" />
-                </p:selectOneMenu></p>
-            <p>Tem Banheira</p>
-            <p:outputLabel for="@next" value="Tem Banheira: " />
-            <p:selectBooleanCheckbox value="#{quartoMBean.quarto.banheira}" />
-            <p>Tem Frigobar</p>
-            <p:outputLabel for="@next" value="Tem Frigobar: " />
-            <p:selectBooleanCheckbox value="#{quartoMBean.quarto.frigobar}" />
-            <p>Tem Televisao</p>
-            <p:outputLabel for="@next" value="Tem Televisao: " />
-            <p:selectBooleanCheckbox value="#{quartoMBean.quarto.televisao}" />
-            <p>Tem Homeoffice</p>
-            <p:outputLabel for="@next" value="Tem Homeoffice: " />
-            <p:selectBooleanCheckbox value="#{quartoMBean.quarto.homeoffice}" />
-            <p>Tem Internet</p>
-            <p:outputLabel for="@next" value="Tem Internet: " />
-            <p:selectBooleanCheckbox value="#{quartoMBean.quarto.internet}" />
             
-            <p><p:commandButton value="Cadastrar" id="cadastrarQuarto" action="#{quartoMBean.cadastrarQuarto()}" styleClass="ui-priority-primary" /></p>
+            <p>Status</p>
+            <p><p:inputText title="status" value="#{quartoMBean.codigoStatus}" /></p>
+            
+            <p>Tem Banheira</p>
+            <p><p:inputText title="banheira" value="#{quartoMBean.quarto.banheira}" /></p>
+            
+            <p>Tem Frigobar</p>
+            <p><p:inputText title="frigobar" value="#{quartoMBean.quarto.frigobar}" /></p>
+            
+            <p>Tem Televisao</p>
+            <p><p:inputText title="televisao" value="#{quartoMBean.quarto.televisao}" /></p>
+            
+            <p>Tem Homeoffice</p>
+            <p><p:inputText title="homeoffice" value="#{quartoMBean.quarto.homeoffice}" /></p>
+            
+            <p>Tem Internet</p>
+            <p><p:inputText title="internet" value="#{quartoMBean.quarto.internet}" /></p>
+            
+            <p><p:commandButton value="CadastrarQuarto" id="cadastrarQuarto" action="#{quartoMBean.cadastrarQuarto()}" styleClass="ui-priority-primary" /></p>
             
         </h:form>
         

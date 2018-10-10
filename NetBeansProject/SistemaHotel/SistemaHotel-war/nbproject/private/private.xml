@@ -3,9 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/andre/Desktop/MinhaMa/hotel-system/NetBeansProject/SistemaHotel/SistemaHotel-war/web/paginaFuncionario.xhtml</file>
-            <file>file:/C:/Users/andre/Desktop/MinhaMa/hotel-system/NetBeansProject/SistemaHotel/SistemaHotel-war/web/cadastrarCliente.xhtml</file>
+            <file>file:/C:/Users/andre/Desktop/MinhaMa/hotel-system/NetBeansProject/SistemaHotel/SistemaHotel-war/src/java/ejb/QuartoMBean.java</file>
             <file>file:/C:/Users/andre/Desktop/MinhaMa/hotel-system/NetBeansProject/SistemaHotel/SistemaHotel-war/web/cadastrarQuarto.xhtml</file>
+            <file>file:/C:/Users/andre/Desktop/MinhaMa/hotel-system/NetBeansProject/SistemaHotel/SistemaHotel-war/src/java/ejb/UsuariohotelMBean.java</file>
         </group>
     </open-files>
 </project-private>
