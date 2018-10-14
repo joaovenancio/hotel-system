@@ -29,7 +29,7 @@ public class ServicohotelFachada {
     }
 
     public List<ejb.Servicohotel> getListaServicohotel() {
-        Query query = em.createNamedQuery("Usuariohotel.findAll");
+        Query query = em.createNamedQuery("Servicohotel.findAll");
         return query.getResultList();
     }
 

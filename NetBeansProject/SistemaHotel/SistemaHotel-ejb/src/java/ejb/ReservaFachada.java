@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
+import javax.ejb.Stateful;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -17,7 +18,7 @@ import javax.persistence.Query;
  *
  * @author joaov
  */
-@Stateless
+@Stateful
 @LocalBean
 public class ReservaFachada {
 
@@ -46,6 +47,8 @@ public class ReservaFachada {
     }
     
     public void salvarReserva(Reserva reserva) {
+        
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+reserva.getReservaPK().getCodigo());
         em.merge(reserva);
         em.flush();
     }

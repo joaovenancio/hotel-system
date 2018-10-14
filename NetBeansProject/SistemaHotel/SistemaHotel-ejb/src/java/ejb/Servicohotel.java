@@ -111,7 +111,7 @@ public class Servicohotel implements Serializable {
 
     @Override
     public String toString() {
-        return "ejb.Servicohotel[ codigo=" + codigo + " ]";
+        return this.nome + " | Preço: " + this.preco + "R$" + " | " +"[ codigo=" + codigo + " ]";
     }
     
 }

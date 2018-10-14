@@ -7,15 +7,15 @@ package ejb;
 
 import java.util.List;
 import javax.ejb.EJB;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
-import javax.enterprise.context.RequestScoped;
 
 /**
  *
  * @author andre
  */
 @Named(value = "reservaMBean")
-@RequestScoped
+@ApplicationScoped
 public class ReservaMBean {
 
     @EJB
@@ -23,6 +23,7 @@ public class ReservaMBean {
     private Reserva reserva = new Reserva();  // Guarda os dados do formulário
     private boolean limpeza = true;
     private boolean manutencao = true;
+    private Servicohotel servico = new Servicohotel();
     
     
     /**
@@ -37,6 +38,14 @@ public class ReservaMBean {
 
     public void setReserva(Reserva reserva) {
         this.reserva = reserva;
+    }
+
+    public Servicohotel getServico() {
+        return servico;
+    }
+
+    public void setServico(Servicohotel servico) {
+        this.servico = servico;
     }
 
     public boolean isLimpeza() {
@@ -66,7 +75,31 @@ public class ReservaMBean {
         return "paginaCliente";
     }
     
-    public List<Reserva> getListaQuarto() {
+    public List<Reserva> getListaReserva() {
         return this.reservaFachada.getListaReserva();
+    }
+    
+    public String solicitarLimpezaManutencao () {
+        if (this.limpeza) { //Limpeza custa 30
+            this.getReserva().setValor(this.reserva.getValor() + 30);
+        }
+        if (this.manutencao) { //Manutencao custa 60
+            this.getReserva().setValor(this.reserva.getValor() + 60);
+        }
+        
+        this.salvarReserva();
+        
+        return "paginaCliente";
+    }
+    
+    public String solicitarServico() {
+        reserva.getServicohotelCollection().add(this.servico);
+        //Atualizar o valor da reserva:
+        this.reserva.setValor(this.reserva.getValor() + this.servico.getPreco());
+        
+        this.salvarReserva();
+        this.servico = new Servicohotel();
+        
+        return "paginaCliente";
     }
 }

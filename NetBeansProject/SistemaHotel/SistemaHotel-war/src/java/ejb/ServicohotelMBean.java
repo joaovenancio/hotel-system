@@ -5,6 +5,7 @@
  */
 package ejb;
 
+import java.util.List;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
@@ -39,6 +40,10 @@ public class ServicohotelMBean {
         servicohotelFachada.cadastrarServicohotel(servico);
         servico = new Servicohotel();
         return "paginaFuncionario";
+    }
+    
+    public List<Servicohotel> getListaServicohotel() {
+        return this.servicohotelFachada.getListaServicohotel();
     }
     
     

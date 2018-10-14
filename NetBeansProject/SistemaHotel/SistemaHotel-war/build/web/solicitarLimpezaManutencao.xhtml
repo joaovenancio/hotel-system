@@ -15,14 +15,14 @@
             
             <p>Solicitar Limpeza?</p>
             <p:selectOneRadio id="limpeza" value="#{reservaMBean.limpeza}">
-                <f:selectItem itemLabel="Sim" itemValue="1" />
-                <f:selectItem itemLabel="Não" itemValue="0" />
+                <f:selectItem itemLabel="Sim" itemValue="true" />
+                <f:selectItem itemLabel="Não" itemValue="false" />
             </p:selectOneRadio>
 
             <p>Solicitar Manutenção?</p>
             <p:selectOneRadio id="manutencao" value="#{reservaMBean.manutencao}">
-                <f:selectItem itemLabel="Sim" itemValue="1" />
-                <f:selectItem itemLabel="Não" itemValue="0" />
+                <f:selectItem itemLabel="Sim" itemValue="true" />
+                <f:selectItem itemLabel="Não" itemValue="false" />
             </p:selectOneRadio>
             
             <p><p:commandButton value="Solicitar Limpeza ou Manutenção" id="solicitarLimpezaManutencao" action="#{reservaMBean.solicitarLimpezaManutencao()}" styleClass="ui-priority-primary" /></p>
