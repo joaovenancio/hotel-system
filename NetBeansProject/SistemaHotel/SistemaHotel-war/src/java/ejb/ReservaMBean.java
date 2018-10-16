@@ -112,9 +112,7 @@ public class ReservaMBean {
         }
         
         reserva.getServicohotelCollection().add(this.servico);
-        //Atualizar o valor da reserva:
-        this.reserva.setValor(this.reserva.getValor() + this.servico.getPreco());
-        
+        //Atualizar a reserva:
         this.salvarReserva();
         
         this.servico = new Servicohotel();
@@ -122,15 +120,31 @@ public class ReservaMBean {
         return "paginaCliente";
     }
     
-    public double calcularValorTotal () {
-        double servicoQuartoManutencao = this.reserva.getValor();
-        double valorTotalDiarias = this.reserva.getQuarto().getValordiaria() * this.reserva.getDiarias();
+    public double getCalcularValorTotalDiarias () {
+        return this.reserva.getQuarto().getValordiaria() * this.reserva.getDiarias();
+    }
+    
+    public String getCalcularValorTotal () {
         double valorTotalServicos = 0;
         for (Servicohotel servico : this.getReserva().getServicohotelCollection()) {
             valorTotalServicos += servico.getPreco();
         }
         
+        double valorTotalDiarias = this.reserva.getQuarto().getValordiaria() * this.reserva.getDiarias();
         
-        return 0;
+        double servicoQuartoManutencao = this.reserva.getValor();
+        
+        double resposta = valorTotalDiarias + valorTotalServicos + servicoQuartoManutencao;
+        
+        return String.valueOf(resposta);
+    }
+    
+    public String getCalcularValorTotalServico () {
+        double valorTotalServicos = 0;
+        for (Servicohotel servico : this.getReserva().getServicohotelCollection()) {
+            valorTotalServicos += servico.getPreco();
+        }
+        
+        return String.valueOf(valorTotalServicos);
     }
 }

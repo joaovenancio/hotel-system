@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        
+        <title>Cadastrar Serviços</title>
+        
+    </h:head>
+    <h:body>
+        
+        <h:form>
+            
+            <h1>Novo Serviço</h1>
+            
+            <p>Nome</p>
+            <p><p:inputText title="nome" value="#{servicohotelMBean.servicohotel.nome}" /></p>
+            <p>Preço</p>
+            <p><p:inputText label="endereco" value="#{servicohotelMBean.servicohotel.preco}" /></p>
+            
+            <p><p:commandButton value="Cadastrar" id="cadastrarServicohotel" action="#{servicohotelMBean.cadastrarServicohotel()}" styleClass="ui-priority-primary" /></p>
+            
+        </h:form> 
+        
+        <h:form>
+            <p><p:commandButton value="voltar" id="voltar" action="paginaFuncionario" styleClass="ui-priority-primary" /></p>
+        </h:form>
+        
+    </h:body>
+</html>
+
