@@ -13,12 +13,16 @@
         
         <h:form>
             
-            <h:selectOneMenu id="servico" value="#{reservaMBean.servico}" required="true">
+            <h:selectOneMenu id="servico" value="#{reservaMBean.toStringServico}" required="true">
                 <f:selectItems value="#{servicohotelMBean.listaServicohotel}" />
             </h:selectOneMenu>
             
             <p><p:commandButton value="Solicitar Serviço" id="solicitarServico" action="#{reservaMBean.solicitarServico()}" styleClass="ui-priority-primary" /></p>
             
+        </h:form>
+        
+        <h:form>
+            <p><p:commandButton value="Ligar bean" id="ligar" action="#{servicoConversor.ligar()}" styleClass="ui-priority-primary" /></p>
         </h:form>
         
         <h:form>

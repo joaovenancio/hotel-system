@@ -8,6 +8,7 @@ package ejb;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
@@ -24,12 +25,23 @@ public class ReservaMBean {
     private boolean limpeza = true;
     private boolean manutencao = true;
     private Servicohotel servico = new Servicohotel();
+    private String toStringServico = "";
     
+    @Inject
+    private ServicohotelMBean servicohotelMBean;
     
     /**
      * Creates a new instance of ReservaMBean
      */
     public ReservaMBean() {
+    }
+
+    public String getToStringServico() {
+        return toStringServico;
+    }
+
+    public void setToStringServico(String toStringServico) {
+        this.toStringServico = toStringServico;
     }
     
     public Reserva getReserva() {
@@ -93,13 +105,32 @@ public class ReservaMBean {
     }
     
     public String solicitarServico() {
+        for (Servicohotel servico : this.servicohotelMBean.getListaServicohotel()) {
+            if (servico.toString().equals(this.toStringServico)) {
+                this.servico = servico;
+            }
+        }
+        
         reserva.getServicohotelCollection().add(this.servico);
         //Atualizar o valor da reserva:
         this.reserva.setValor(this.reserva.getValor() + this.servico.getPreco());
         
         this.salvarReserva();
+        
         this.servico = new Servicohotel();
         
         return "paginaCliente";
+    }
+    
+    public double calcularValorTotal () {
+        double servicoQuartoManutencao = this.reserva.getValor();
+        double valorTotalDiarias = this.reserva.getQuarto().getValordiaria() * this.reserva.getDiarias();
+        double valorTotalServicos = 0;
+        for (Servicohotel servico : this.getReserva().getServicohotelCollection()) {
+            valorTotalServicos += servico.getPreco();
+        }
+        
+        
+        return 0;
     }
 }
