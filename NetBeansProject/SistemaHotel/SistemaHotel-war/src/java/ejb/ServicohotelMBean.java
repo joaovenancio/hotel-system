@@ -7,6 +7,7 @@ package ejb;
 
 import java.util.List;
 import javax.ejb.EJB;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 
@@ -15,7 +16,7 @@ import javax.enterprise.context.RequestScoped;
  * @author joaov
  */
 @Named(value = "servicohotelMBean")
-@RequestScoped
+@ApplicationScoped
 public class ServicohotelMBean {
 
     @EJB
