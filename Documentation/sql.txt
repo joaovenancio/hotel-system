@@ -53,11 +53,12 @@ CREATE TABLE SERVICOHOTEL (
 );
 
 CREATE TABLE RESERVA_SERVICO (
+    codigo INT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
     fk_codigoreserva NUMERIC NOT NULL,
     fk_codquarto NUMERIC NOT NULL,
     fk_codusuario NUMERIC NOT NULL,
     fk_codigoservico NUMERIC NOT NULL,
-    PRIMARY KEY (fk_codigoreserva,fk_codquarto,fk_codusuario,fk_codigoservico),
+    PRIMARY KEY (codigo, fk_codigoreserva,fk_codquarto,fk_codusuario,fk_codigoservico),
     CONSTRAINT FK_RESERVA FOREIGN KEY (fk_codigoreserva,fk_codquarto,fk_codusuario) REFERENCES RESERVA (codigo,fk_codquarto,fk_codusuario),
     CONSTRAINT FK_SERVICO FOREIGN KEY (fk_codigoservico) REFERENCES SERVICOHOTEL (codigo)
 );
